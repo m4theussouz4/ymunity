@@ -1,0 +1,17 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12px;
+    gap: 8px;
+    cursor: pointer;
+
+    &.primary {
+        color: var(--color-accent-500);
+    }
+
+    &.danger {
+        color: var(--color-error-500);
+    }
+}

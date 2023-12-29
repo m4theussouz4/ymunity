@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    width: 100%;
+    
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+    
+        label {
+            position: absolute;
+            top: -5px;
+            left: 15px;
+            padding: 0px 10px;
+            background-color: var(--color-grey-50);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+    
+        input {
+            border: 1px solid #e7e7e9;
+            border-radius: 8px;
+            padding: 12px 8px;
+            background-color: var(--color-grey-50);
+        }
+    }
+}

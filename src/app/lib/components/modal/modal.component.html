@@ -1,0 +1,14 @@
+<div *ngIf="displayModal" class="custom-modal-container">
+    <div class="custom-modal">
+        <div class="header">
+            <h6 class="title">{{ title }}</h6>
+            <i class="icon fa-solid fa-xmark" (click)="close()"></i>
+        </div>
+        <div class="body">
+            <ng-content></ng-content>
+        </div>
+        <div class="footer">
+            <ng-content select="[footer]"></ng-content>
+        </div>
+    </div>
+</div>

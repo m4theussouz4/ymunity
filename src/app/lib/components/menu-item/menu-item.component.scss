@@ -1,0 +1,23 @@
+.menu-item-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+
+    &.activated {
+        background-color: var(--color-active-menu);
+    }
+
+    .icon {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+
+        &::before {
+            font-size: 16px;
+        }
+    }
+}

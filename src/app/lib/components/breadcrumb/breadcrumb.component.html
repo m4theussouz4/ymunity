@@ -1,0 +1,6 @@
+<div class="breadcrumb-container">
+    <ng-container *ngFor="let item of breadcrumbItems; let last = last">
+        <a libDisableable [href]="item.link" [disabled]="last">{{ item.label }}</a>
+        <i *ngIf="!last" class="icon fa-solid fa-angle-right"></i>
+    </ng-container>
+</div>

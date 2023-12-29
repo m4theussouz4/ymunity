@@ -1,0 +1,22 @@
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 210px;
+    min-height: 100%;
+    background-color: var(--color-primary-800);
+    color: var(--color-white);
+    padding: 40px 0;
+
+    .collapsible-menu-header {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        padding: 16px;
+        cursor: pointer;
+    }
+
+    .collapsible-menu {
+        overflow: hidden;
+        height: fit-content;
+    }
+}

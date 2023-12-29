@@ -1,0 +1,16 @@
+.tab-group-container {
+    display: flex;
+
+    .tab-content {
+        padding: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1.25px;
+        cursor: pointer;
+    }
+
+    .active {
+        color: var(--color-primary-500);
+        border-bottom: 2px solid var(--color-primary-500);
+    }
+}

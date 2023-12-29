@@ -1,0 +1,13 @@
+
+<form class="switch-container" [formGroup]="formGroup">
+    <div class="switch-label">{{ label }}</div>
+    <div class="button-switch-container" [class.checked]="this.formGroup?.get(this.controlName)?.value">
+        <input
+            type="checkbox"
+            [id]="controlName"
+            [name]="controlName"
+            [formControlName]="controlName"
+        >
+        <label class="toggle-button-switch" [for]="controlName"></label>
+    </div>
+</form>

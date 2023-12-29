@@ -1,0 +1,37 @@
+<div class="menu-container">
+    <ng-content></ng-content>
+
+    <div
+        *ngFor="let item of menuList; let i = index"
+    >
+        <lib-menu-item
+            *ngIf="!item.subItems; else collapsibleMenu"
+            [icon]="item.icon!"
+            [label]="item.label"
+            [link]="item.link!"
+            [id]="i"
+            [activated]="activeMenuIndex === i"
+            (setActiveId)="selectMenu($event)"
+        ></lib-menu-item>
+
+        <ng-template #collapsibleMenu>
+            <div class="collapsible-menu-header" (click)="toggleState()">
+                <div>{{ item.label }}</div>
+                <i class="fa" [ngClass]="state === 'expanded' ? 'fa-angle-down' : 'fa-angle-right'"></i>
+            </div>
+            <div [@collapsible]="state" class="collapsible-menu">
+                <lib-menu-item
+                    *ngFor="let menuItem of item.subItems; let subItemsIndex = index"
+                    [icon]="menuItem.icon"
+                    [label]="menuItem.label"
+                    [link]="menuItem.link!"
+                    [id]="subItemsIndex + i"
+                    [activated]="activeMenuIndex === subItemsIndex + i"
+                    (setActiveId)="selectMenu($event)"
+                ></lib-menu-item>
+            </div>
+        </ng-template>
+    </div>
+
+    <ng-content select="[footer]"></ng-content>
+</div>

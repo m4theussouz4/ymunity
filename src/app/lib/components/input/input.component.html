@@ -1,0 +1,13 @@
+<form class="input-container" [formGroup]="formGroup">
+    <label [for]="controlName">{{ label }}</label>
+    <input
+        [style.text-transform]="uppercase ? 'uppercase' : ''"
+        [type]="inputType"
+        [id]="controlName"
+        [name]="controlName"
+        [formControlName]="controlName"
+        [placeholder]="placeholder || label"
+        [dropSpecialCharacters]="dropSpecialCharacters"
+        [mask]="mask"
+    />
+</form>

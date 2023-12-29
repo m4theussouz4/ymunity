@@ -1,0 +1,31 @@
+:host {
+    display: block;
+
+    .button-container {
+        display: flex;
+        background-color: var(--color-accent-500);
+        color: var(--color-white);
+        padding: 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1.25px;
+        cursor: pointer;
+
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        &.primary {
+            background-color: var(--color-accent-500);
+        }
+    
+        &.danger {
+            background-color: var(--color-error-500);
+        }
+    }
+}

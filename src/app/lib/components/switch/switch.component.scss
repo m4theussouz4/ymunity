@@ -1,0 +1,51 @@
+:host {
+    display: flex;
+    align-self: center;
+
+    .switch-container {
+        width: max-content;
+
+        .switch-label {
+            background-color: var(--color-grey-50);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 5px;
+        }
+
+        .button-switch-container {
+            width: 56px;
+            height: 28px;
+            border: 1px solid var(--color-border-switch);
+            border-radius: 100px;
+            background-color: var(--color-grey-200);
+            position: relative;
+
+            &.checked {
+                background-color: var(--color-accent-500);
+                opacity: 0.9;
+            }
+    
+            .toggle-button-switch {
+                position: absolute;
+                top: 3px;
+                left: 4px;        
+                width: 20px;
+                height: 20px;
+                background-color: var(--color-white);
+                border-radius: 100%;
+                cursor: pointer;
+                z-index: 100;
+                transition: left 0.3s;
+            }
+    
+            input[type="checkbox"] {
+                display: none; 
+    
+                &:checked ~ .toggle-button-switch {
+                    left: 30px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<div class="tab-group-container">
+    <div
+        *ngFor="let tab of tabList"
+        class="tab-content"
+        [class.active]="tab.id === activatedId"
+        (click)="changeTab(tab)"
+    >
+        <span>{{ tab.label }}</span>
+    </div>
+</div>

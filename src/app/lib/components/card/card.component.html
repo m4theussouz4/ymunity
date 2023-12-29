@@ -1,0 +1,91 @@
+<ng-container *ngIf="!isEditing; else formContainer">
+
+    <div class="title">
+        <h6>{{ address.title }}</h6>
+        <i *ngIf="address.mainAddress" class="icon fa-solid fa-star"></i>
+    </div>
+
+
+    <div class="content">
+        <p>{{ address.street }}</p>
+        <p>{{ address.city }} / {{ address.state }}</p>
+        <p>CEP {{ address.zipCode }}</p>
+    </div>
+
+    <div class="footer">
+        <lib-transparent-button
+            [label]="primaryButton.label"
+            [icon]="primaryButton.icon!"
+            (onClick)="isEditing = true"
+        ></lib-transparent-button>
+        
+        <lib-transparent-button
+            [label]="secondaryButton.label"
+            [icon]="secondaryButton.icon!"
+            [type]="'danger'"
+            (onClick)="secondaryButton.callback!()"
+        ></lib-transparent-button>
+    </div>
+</ng-container>
+
+<ng-template #formContainer>
+    <form [formGroup]="addressForm" class="form-container">
+        <lib-input
+            label="Nome"
+            controlName="title"
+            [formGroup]="addressForm"
+        ></lib-input>
+
+        <lib-input
+            label="Logradouro"
+            controlName="street"
+            [formGroup]="addressForm"
+        ></lib-input>
+
+        <div class="split-input">
+            <lib-input
+                label="Cidade"
+                controlName="city"
+                mask="S*"
+                [formGroup]="addressForm"
+            ></lib-input>
+
+            <lib-input
+                label="Estado"
+                controlName="state"
+                mask="SS"
+                [uppercase]="true"
+                [formGroup]="addressForm"
+            ></lib-input>
+        </div>
+
+        <div  class="split-input">
+            <lib-input
+                label="CEP"
+                controlName="zipCode"
+                mask="00000-000"
+                [formGroup]="addressForm"
+            ></lib-input>
+
+            <lib-switch
+                label="Endereço Principal"
+                controlName="mainAddress"
+                [formGroup]="addressForm"
+            ></lib-switch>
+        </div>
+
+        <div class="footer">
+            <lib-primary-button
+                label="Salvar"
+                [disabled]="!this.addressForm.valid"
+                (onClick)="saveAddress()"
+            ></lib-primary-button>
+            
+            <lib-transparent-button
+                label="Cancelar"
+                [type]="'danger'"
+                (onClick)="cancelEdit()"
+            ></lib-transparent-button>
+        </div>
+    </form>
+</ng-template>
