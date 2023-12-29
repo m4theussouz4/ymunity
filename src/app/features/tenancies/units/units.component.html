@@ -1,0 +1,44 @@
+<div class="header">
+    <div class="header-text">Adicione endereços de diferentes unidades.</div>
+    <lib-primary-button
+        icon="fa-plus"
+        label="Adicionar"
+        [disabled]="!addressList[0]?.id"
+        (onClick)="createAddresse()"
+    ></lib-primary-button>
+</div>
+
+<div class="body">
+    <lib-card
+        *ngFor="let address of addressList"
+        [address]="address"
+        [primaryButton]="cardPrimaryButton"
+        [secondaryButton]="{
+            label: 'Excluir',
+            icon: 'fa-trash',
+            callback: deleteAddressesConfirm.bind(this, address)
+        }"
+        (saveEmit)="saveAddress($event)"
+        (cancelCreatEmit)="cancelAddresseCreate()"
+    ></lib-card>
+</div>
+
+<lib-modal
+    #deleteModal
+    title="Excluir Unidade"
+>
+    <p>Tem certeza que deseja excluir esta unidade?</p>
+
+    <ng-container footer>
+        <lib-transparent-button
+            label="Cancelar"
+            (onClick)="deleteModal.close()"
+        ></lib-transparent-button>
+        
+        <lib-primary-button
+            label="Excluir"
+            type="danger"
+            (onClick)="deleteAddresses()"
+        ></lib-primary-button>
+    </ng-container>
+</lib-modal>

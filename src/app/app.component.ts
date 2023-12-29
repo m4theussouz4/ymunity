@@ -1,10 +1,24 @@
 import { Component } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<router-outlet></router-outlet>`,
+  styles: [
+    `
+      :host {
+        min-height: 100%;
+      }
+    `,
+  ],
 })
+
 export class AppComponent {
-  title = 'ymunity';
+  constructor(private translocoService: TranslocoService) {
+    // todo: fix transloco
+    // this.translocoService.load('pt-BR').pipe(take(1)).subscribe(() => {
+    //   this.translocoService.setActiveLang('pt-BR');
+    // });
+  }
 }

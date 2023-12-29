@@ -1,0 +1,40 @@
+{
+  "addressList": [
+    {
+      "id": "0",
+      "mainAddress": true,
+      "title": "Pulsus Santa Lúcia",
+      "street": "Rua Candelaro Machado, 13, Prédio 2, bairro Santa Lúcia",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "31258-060"
+    },
+    {
+      "id": "1",
+      "mainAddress": false,
+      "title": "Pulsus Afonso Pena",
+      "street": "Av. Afonso Pena, 2436, Prédio 2, Centro",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30130-011"
+    },
+    {
+      "id": "2",
+      "mainAddress": false,
+      "title": "Pulsus Santo Amaro",
+      "street": "Rua Santo Luciano, 133, bairro Santo Amaro",
+      "city": "São Paulo",
+      "state": "SP",
+      "zipCode": "29045-076"
+    },
+    {
+      "id": "3",
+      "mainAddress": false,
+      "title": "Pulsus Botafogo",
+      "street": "Av. Pasteur, 251, Botafogo",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "zipCode": "21941-901"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<div class="main-container">
+    <lib-menu 
+        [menuList]="menuItems"
+    >
+        <div class="logo-container">
+            <img src="./assets/images/brand.svg" alt="brand">
+        </div>
+
+        <div footer class="menu-footer">
+            <div class="menu-item-container" (click)="logOut()">
+                <i class="icon fa fa-arrow-right-from-bracket"></i>
+                <div>Sair</div>
+            </div>
+        </div>
+    </lib-menu>
+
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
